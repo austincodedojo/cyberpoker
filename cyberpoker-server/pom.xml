@@ -17,5 +17,12 @@
   </dependencies>
   <build>
     <finalName>cyberpoker-server</finalName>
+    <plugins>
+    	<plugin>
+    		<groupId>org.mortbay.jetty</groupId>
+    		<artifactId>jetty-maven-plugin</artifactId>
+    		<version>7.0.0.1beta3</version>
+    	</plugin>
+    </plugins>
   </build>
 </project>
