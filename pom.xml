@@ -27,11 +27,22 @@
     	  <target>1.6</target>
     	</configuration>
   	  </plugin>
+  	  <plugin>
+  	    <groupId>org.apache.maven.plugins</groupId>
+  	    <artifactId>maven-surefire-plugin</artifactId>
+  	    <version>2.6</version>
+  	    <configuration>
+  	       <includes>
+  	         <include>**/When*.java</include>
+  	       </includes>
+  	    </configuration>
+  	  </plugin>
     </plugins>
     </pluginManagement>
   </build>
   <modules>
   	<module>cyberpoker-server</module>
   	<module>cyberpoker-client</module>
+  	<module>cyberpoker-acceptance</module>
   </modules>
 </project>
