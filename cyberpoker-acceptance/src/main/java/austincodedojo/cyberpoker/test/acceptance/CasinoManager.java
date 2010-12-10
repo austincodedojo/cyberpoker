@@ -16,7 +16,7 @@ public class CasinoManager {
     throw new NotImplementedException("Still need to implement CasinoManager.CasinoManager()");
   }
 
-  public void waitForPlayer(PlayerDriver player) {
+  public void waitForPlayer(Player player) {
     // TODO Auto-generated method stub
     throw new NotImplementedException("Still need to implement CasinoManager.waitForPlayer()");
   }

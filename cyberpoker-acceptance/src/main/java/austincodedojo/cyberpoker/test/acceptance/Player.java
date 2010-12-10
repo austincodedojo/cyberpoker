@@ -8,9 +8,9 @@ import org.apache.commons.lang.*;
  * @author gsymons@gsconsulting.biz
  *
  */
-public class PlayerDriver {
+public class Player {
 
-  public PlayerDriver(String playerName) {
+  public Player(String playerName) {
     throw new NotImplementedException("Still need to implement PlayerDriver.PlayerDriver()");
   }
 
