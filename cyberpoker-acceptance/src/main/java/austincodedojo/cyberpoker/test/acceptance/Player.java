@@ -1,5 +1,6 @@
 package austincodedojo.cyberpoker.test.acceptance;
 
+import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import org.apache.commons.lang.*;
@@ -25,9 +26,12 @@ public class Player extends JFrameDriver{
 			showingOnScreen());
   }
 
+  @SuppressWarnings("unchecked")
   public void enterCasino(String casinoUrl) {
-    // TODO Auto-generated method stub
-    throw new NotImplementedException("Still need to implement PlayerDriver.enterCasino()");
+    JTextFieldDriver casinoField = new JTextFieldDriver(this, JTextField.class, named(PlayerWindow.CASINO_FIELD));
+    casinoField.replaceAllText(casinoUrl);
+    JButtonDriver enterButton = new JButtonDriver(this, JButton.class, named(PlayerWindow.ENTER_CASINO_BUTTON));
+    enterButton.click();
   }
 
   public void shouldShowDealerNamed(String dealerName) {
