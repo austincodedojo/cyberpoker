@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import austincodedojo.cyberpoker.client.PlayerMain;
+import austincodedojo.cyberpoker.client.ClientMain;
 
 
 public class WhenThePlayerHasConnectedToACasino {
@@ -15,7 +15,7 @@ public class WhenThePlayerHasConnectedToACasino {
   @Before
   public void startClient()
   {
-	  PlayerMain.main(new String[0]);
+	  ClientMain.main(new String[0]);
 	  player = new Player();
   }
   

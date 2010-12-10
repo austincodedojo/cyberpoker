@@ -1,14 +1,13 @@
 package austincodedojo.cyberpoker.client;
 
-public class PlayerMain {
-
-	public static final String PLAYER_NAME = "PlayerName";
-    public static String MAIN_WINDOW = "PlayerWindow";
+public class ClientMain {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
+	  PlayerWindow mainWindow = new PlayerWindow();
+	  mainWindow.display();
 	}
 
 }

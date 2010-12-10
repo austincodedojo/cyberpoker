@@ -21,7 +21,7 @@ public class Player extends JFrameDriver{
   @SuppressWarnings("unchecked")
   public Player() {
 	  super(new GesturePerformer(), new AWTEventQueueProber(),
-			named(PlayerMain.MAIN_WINDOW),
+			named(PlayerWindow.MAIN_WINDOW_NAME),
 			showingOnScreen());
   }
 
@@ -37,7 +37,7 @@ public class Player extends JFrameDriver{
 
   @SuppressWarnings("unchecked")
   public void setName(String playerName) {
-    JTextFieldDriver playerNameField = new JTextFieldDriver(this, JTextField.class, named(PlayerMain.PLAYER_NAME));
+    JTextFieldDriver playerNameField = new JTextFieldDriver(this, JTextField.class, named(PlayerWindow.PLAYER_NAME_FIELD));
     playerNameField.replaceAllText(playerName);
   }
 }
