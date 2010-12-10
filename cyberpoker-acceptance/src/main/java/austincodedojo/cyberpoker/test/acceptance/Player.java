@@ -1,5 +1,7 @@
 package austincodedojo.cyberpoker.test.acceptance;
 
+import javax.swing.JTextField;
+
 import org.apache.commons.lang.*;
 
 import austincodedojo.cyberpoker.client.*;
@@ -33,13 +35,9 @@ public class Player extends JFrameDriver{
     throw new NotImplementedException("Still need to implement PlayerDriver.shouldShowDealerNamed()");
   }
 
-  public void dispose() {
-	// TODO Auto-generated method stub
-	
-  }
-
-  public void setName(String string) {
-	// TODO Auto-generated method stub
-	
+  @SuppressWarnings("unchecked")
+  public void setName(String playerName) {
+    JTextFieldDriver playerNameField = new JTextFieldDriver(this, JTextField.class, named(PlayerMain.PLAYER_NAME));
+    playerNameField.replaceAllText(playerName);
   }
 }

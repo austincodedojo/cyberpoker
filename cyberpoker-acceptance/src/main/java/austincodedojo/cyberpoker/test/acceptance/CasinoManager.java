@@ -11,9 +11,10 @@ import org.apache.commons.lang.NotImplementedException;
  */
 public class CasinoManager {
 
-  public CasinoManager(String string) {
-    // TODO Auto-generated constructor stub
-    throw new NotImplementedException("Still need to implement CasinoManager.CasinoManager()");
+  private final String casinoUrl;
+
+  public CasinoManager(String casinoUrl) {
+    this.casinoUrl = casinoUrl;
   }
 
   public void waitForPlayer(Player player) {
@@ -22,8 +23,7 @@ public class CasinoManager {
   }
 
   public void hireDealer(String dealerName) {
-    // TODO Auto-generated method stub
-    throw new NotImplementedException("Still need to implement CasinoManager.hireDealer()");
+    
   }
 
 }

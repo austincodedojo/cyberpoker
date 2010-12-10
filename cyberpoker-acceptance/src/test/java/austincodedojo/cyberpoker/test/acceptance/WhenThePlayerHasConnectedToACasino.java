@@ -1,10 +1,10 @@
 package austincodedojo.cyberpoker.test.acceptance;
 
-import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
-import org.junit.*;
-
-import austincodedojo.cyberpoker.client.*;
+import austincodedojo.cyberpoker.client.PlayerMain;
 
 
 public class WhenThePlayerHasConnectedToACasino {
