@@ -2,16 +2,25 @@ package austincodedojo.cyberpoker.test.acceptance;
 
 import org.apache.commons.lang.*;
 
+import austincodedojo.cyberpoker.client.*;
+
+import com.objogate.wl.swing.*;
+import com.objogate.wl.swing.driver.*;
+import com.objogate.wl.swing.gesture.*;
+
 /**
  * Drives a Player GUI using WindowLicker for testing.
  * 
  * @author gsymons@gsconsulting.biz
  *
  */
-public class Player {
+public class Player extends JFrameDriver{
 
-  public Player(String playerName) {
-    throw new NotImplementedException("Still need to implement PlayerDriver.PlayerDriver()");
+  @SuppressWarnings("unchecked")
+  public Player() {
+	  super(new GesturePerformer(), new AWTEventQueueProber(),
+			named(PlayerMain.MAIN_WINDOW),
+			showingOnScreen());
   }
 
   public void enterCasino(String casinoUrl) {
@@ -22,5 +31,15 @@ public class Player {
   public void shouldShowDealerNamed(String dealerName) {
     // TODO Auto-generated method stub
     throw new NotImplementedException("Still need to implement PlayerDriver.shouldShowDealerNamed()");
+  }
+
+  public void dispose() {
+	// TODO Auto-generated method stub
+	
+  }
+
+  public void setName(String string) {
+	// TODO Auto-generated method stub
+	
   }
 }
