@@ -11,25 +11,19 @@
   <name>Austin Code Dojo CyberPoker Acceptance Tests</name>
   <dependencies>
   	<dependency>
-  		<groupId>austincodedojo</groupId>
-  		<artifactId>cyberpoker-client</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  		<type>jar</type>
-  		<scope>test</scope>
-  	</dependency>
-  	<dependency>
-  		<groupId>austincodedojo</groupId>
-  		<artifactId>cyberpoker-server</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  		<type>war</type>
-  		<scope>test</scope>
-  	</dependency>
-  	<dependency>
   		<groupId>net.sourceforge.htmlunit</groupId>
   		<artifactId>htmlunit</artifactId>
   		<version>2.5</version>
   		<type>jar</type>
   		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>commons-lang</groupId>
+  		<artifactId>commons-lang</artifactId>
   	</dependency>
   </dependencies>
 </project>

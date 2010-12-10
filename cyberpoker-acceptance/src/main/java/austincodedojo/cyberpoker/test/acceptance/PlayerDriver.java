@@ -1,8 +1,6 @@
 package austincodedojo.cyberpoker.test.acceptance;
 
-import static org.junit.Assert.*;
-
-import org.apache.commons.lang.NotImplementedException;
+import org.apache.commons.lang.*;
 
 /**
  * Drives a Player GUI using WindowLicker for testing.
