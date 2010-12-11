@@ -26,13 +26,21 @@ public class Player extends JFrameDriver{
 			showingOnScreen());
   }
 
-  @SuppressWarnings("unchecked")
   public void enterCasino(String casinoUrl) {
-    JTextFieldDriver casinoField = new JTextFieldDriver(this, JTextField.class, named(PlayerWindow.CASINO_FIELD));
-    casinoField.replaceAllText(casinoUrl);
+	enterTextIntoField(casinoUrl, PlayerWindow.CASINO_FIELD);
+	
+	@SuppressWarnings("unchecked")
     JButtonDriver enterButton = new JButtonDriver(this, JButton.class, named(PlayerWindow.ENTER_CASINO_BUTTON));
     enterButton.click();
   }
+
+private void enterTextIntoField(String text, String field) {
+	@SuppressWarnings("unchecked")
+	JTextFieldDriver casinoField = new JTextFieldDriver(this, JTextField.class, named(field));
+    casinoField.focusWithMouse();
+    casinoField.typeText(text);
+    casinoField.hasText(text);
+}
 
   public void shouldShowDealerNamed(String dealerName) {
     // TODO Auto-generated method stub
@@ -41,7 +49,6 @@ public class Player extends JFrameDriver{
 
   @SuppressWarnings("unchecked")
   public void setName(String playerName) {
-    JTextFieldDriver playerNameField = new JTextFieldDriver(this, JTextField.class, named(PlayerWindow.PLAYER_NAME_FIELD));
-    playerNameField.replaceAllText(playerName);
+    enterTextIntoField(playerName, PlayerWindow.PLAYER_NAME_FIELD);
   }
 }
