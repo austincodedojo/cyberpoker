@@ -47,7 +47,6 @@ private void enterTextIntoField(String text, String field) {
     throw new NotImplementedException("Still need to implement PlayerDriver.shouldShowDealerNamed()");
   }
 
-  @SuppressWarnings("unchecked")
   public void setName(String playerName) {
     enterTextIntoField(playerName, PlayerWindow.PLAYER_NAME_FIELD);
   }

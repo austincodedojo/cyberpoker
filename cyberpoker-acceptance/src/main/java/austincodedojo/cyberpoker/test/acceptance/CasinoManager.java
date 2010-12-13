@@ -1,19 +1,12 @@
 package austincodedojo.cyberpoker.test.acceptance;
 
-import java.net.*;
+import java.net.URISyntaxException;
+import java.net.URL;
 
 import org.apache.commons.lang.NotImplementedException;
 
-import java.net.*;
-
-import javax.ws.rs.core.*;
-
 import austincodedojo.cyberpoker.core.Dealer;
 import austincodedojo.cyberpoker.server.manager.CasinoManagerConnection;
-
-import com.sun.jersey.api.client.*;
-import com.sun.jersey.api.client.config.*;
-import com.sun.jersey.core.util.*;
 
 /**
  * Connects to the CasinoManagement port of the Casino server to control the
