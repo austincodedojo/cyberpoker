@@ -1,6 +1,7 @@
 package austincodedojo.cyberpoker.test.acceptance;
 
 import org.apache.commons.lang.NotImplementedException;
+import java.net.*;
 
 /**
  * Connects to the CasinoManagement port of the Casino server to control the 
@@ -11,19 +12,23 @@ import org.apache.commons.lang.NotImplementedException;
  */
 public class CasinoManager {
 
-  private final String casinoUrl;
+	private final URL casinoUrl;
 
-  public CasinoManager(String casinoUrl) {
-    this.casinoUrl = casinoUrl;
-  }
+	public CasinoManager(URL casinoUrl) throws MalformedURLException {
+		this.casinoUrl = new URL(casinoUrl, "manager");
+	}
 
-  public void waitForPlayer(Player player) {
-    // TODO Auto-generated method stub
-    throw new NotImplementedException("Still need to implement CasinoManager.waitForPlayer()");
-  }
+	public void waitForPlayer(Player player) {
+		// TODO Auto-generated method stub
+		throw new NotImplementedException(
+				"Still need to implement CasinoManager.waitForPlayer()");
+	}
 
-  public void hireDealer(String dealerName) {
-    
-  }
+	public void hireDealer(String dealerName) throws URISyntaxException {
+	}
+
+	public void fireAllDealers() {
+
+	}
 
 }
