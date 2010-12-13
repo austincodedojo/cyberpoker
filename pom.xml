@@ -7,6 +7,13 @@
 	<packaging>pom</packaging>
 	<name>Austin Code Dojo CyberPoker</name>
 	<description>A server and client for agent-assisted online poker.</description>
+	<repositories>
+		<repository>
+			<id>sonatype-java-net-2</id>
+			<name>Sonatype Java.net repository 2</name>
+			<url>https://oss.sonatype.org/content/repositories/java.net2/</url>
+		</repository>
+	</repositories>
 	<dependencies>
 	</dependencies>
 	<build>
@@ -39,6 +46,16 @@
 				<version>2.4</version>
 				<type>jar</type>
 				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.jersey</groupId>
+				<artifactId>jersey-server</artifactId>
+				<version>1.2</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.jersey</groupId>
+				<artifactId>jersey-client</artifactId>
+				<version>1.2</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
