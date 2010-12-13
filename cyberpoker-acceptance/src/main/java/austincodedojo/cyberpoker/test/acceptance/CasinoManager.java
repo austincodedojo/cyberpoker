@@ -3,9 +3,13 @@ package austincodedojo.cyberpoker.test.acceptance;
 import java.net.*;
 
 import org.apache.commons.lang.NotImplementedException;
+
 import java.net.*;
 
 import javax.ws.rs.core.*;
+
+import austincodedojo.cyberpoker.core.Dealer;
+import austincodedojo.cyberpoker.server.manager.CasinoManagerConnection;
 
 import com.sun.jersey.api.client.*;
 import com.sun.jersey.api.client.config.*;
@@ -26,7 +30,7 @@ public class CasinoManager {
 		connection = createConnection(casinoUrl);
 	}
 
-	public void waitForPlayer(Player player) {
+	public void waitForPlayer(PlayerDriver driver) {
 		// TODO Auto-generated method stub
 		throw new NotImplementedException(
 				"Still need to implement CasinoManager.waitForPlayer()");

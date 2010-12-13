@@ -12,7 +12,7 @@ import austincodedojo.cyberpoker.client.ClientMain;
 public class WhenThePlayerHasConnectedToACasino {
   private static final String CASINO_URL = "http://localhost:8080/cyberpoker-casino";
   private static final String DEALER_NAME = "Joe";
-  private Player player;
+  private PlayerDriver player;
   private CasinoManager casino;
   
   @Before
@@ -20,7 +20,7 @@ public class WhenThePlayerHasConnectedToACasino {
   {
 	  ClientMain.main(new String[0]);
 	  casino = new CasinoManager(new URL(CASINO_URL));
-	  player = new Player();
+	  player = new PlayerDriver();
   }
   
   @After

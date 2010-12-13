@@ -17,10 +17,10 @@ import com.objogate.wl.swing.gesture.*;
  * @author gsymons@gsconsulting.biz
  *
  */
-public class Player extends JFrameDriver{
+public class PlayerDriver extends JFrameDriver{
 
   @SuppressWarnings("unchecked")
-  public Player() {
+  public PlayerDriver() {
 	  super(new GesturePerformer(), new AWTEventQueueProber(),
 			named(PlayerWindow.MAIN_WINDOW_NAME),
 			showingOnScreen());

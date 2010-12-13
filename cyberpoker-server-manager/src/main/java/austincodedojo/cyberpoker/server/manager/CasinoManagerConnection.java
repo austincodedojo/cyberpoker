@@ -1,8 +1,12 @@
-package austincodedojo.cyberpoker.test.acceptance;
+package austincodedojo.cyberpoker.server.manager;
 
 import java.net.*;
 
 import javax.ws.rs.core.*;
+
+
+import austincodedojo.cyberpoker.core.Dealer;
+import austincodedojo.cyberpoker.server.manager.exception.RecalcitrantManagerGrumbling;
 
 import com.sun.jersey.api.client.*;
 import com.sun.jersey.api.client.config.*;

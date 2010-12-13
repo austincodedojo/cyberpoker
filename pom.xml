@@ -68,6 +68,8 @@
 		<module>${austincodedojo.serverModule}</module>
 		<module>cyberpoker-client</module>
 		<module>cyberpoker-acceptance</module>
+		<module>cyberpoker-server-manager</module>
+		<module>cyberpoker-core</module>
 	</modules>
 	<properties>
 		<austincodedojo.serverModule>cyberpoker-server</austincodedojo.serverModule>

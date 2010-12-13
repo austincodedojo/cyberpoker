@@ -1,4 +1,4 @@
-package austincodedojo.cyberpoker.test.acceptance;
+package austincodedojo.cyberpoker.core;
 
 public class Dealer {
 	private final String dealerName;

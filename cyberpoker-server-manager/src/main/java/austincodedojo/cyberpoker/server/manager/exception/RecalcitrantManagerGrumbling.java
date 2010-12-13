@@ -1,4 +1,4 @@
-package austincodedojo.cyberpoker.test.acceptance;
+package austincodedojo.cyberpoker.server.manager.exception;
 
 public class RecalcitrantManagerGrumbling extends RuntimeException {
 
