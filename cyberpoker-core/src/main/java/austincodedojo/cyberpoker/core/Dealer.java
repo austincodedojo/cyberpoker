@@ -1,14 +1,31 @@
 package austincodedojo.cyberpoker.core;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Dealer {
-	private final String dealerName;
+    @XmlAttribute
+    private int version = 1;
+    
+    @XmlElement
+	private String name = "";
 
 	public Dealer(String dealerName) {
-		this.dealerName = dealerName;
+		this.name = dealerName;
+	}
+	
+	public Dealer() {
+    }
+
+	public int getVersion()
+	{
+	  return version;
 	}
 	
 	public String getName()
 	{
-		return dealerName;
+		return name;
 	}
 }

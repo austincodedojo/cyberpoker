@@ -24,11 +24,8 @@ public class CasinoManagerConnection {
 	}
 
 	public void hireDealer(Dealer dealer) {
-		final MultivaluedMap<String, String> serializedDealer = new MultivaluedMapImpl();
-		serializedDealer.add("name", dealer.getName());
-		
 		try {
-			service.path("dealers").put(serializedDealer);
+			service.path("dealers").put(dealer);
 		} catch (Exception e) {
 			throw new RecalcitrantManagerGrumbling("I don't want to hire the dealer named \"" + dealer.getName() + "\" because: " + e.getMessage(), e);
 		}
