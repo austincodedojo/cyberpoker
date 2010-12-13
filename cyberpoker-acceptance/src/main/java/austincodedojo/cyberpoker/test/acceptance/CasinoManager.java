@@ -33,7 +33,7 @@ public class CasinoManager {
 	}
 
 	public void hireDealer(String dealerName) {
-		connection.createDealer(new Dealer(dealerName));
+		connection.hireDealer(new Dealer(dealerName));
 	}
 
 	private CasinoManagerConnection createConnection(URL casinoUrl) throws URISyntaxException {

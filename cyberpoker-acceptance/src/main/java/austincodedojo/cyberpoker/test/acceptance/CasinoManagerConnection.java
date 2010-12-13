@@ -19,14 +19,14 @@ public class CasinoManagerConnection {
 		service = client.resource(casinoUrl.toURI()).path("manager");
 	}
 
-	public void createDealer(Dealer dealer) {
+	public void hireDealer(Dealer dealer) {
 		final MultivaluedMap<String, String> serializedDealer = new MultivaluedMapImpl();
 		serializedDealer.add("name", dealer.getName());
 		
 		try {
 			service.path("dealers").put(serializedDealer);
 		} catch (Exception e) {
-			throw new RecalcitrantManager("Unable to create dealer named \"" + dealer.getName() + "\" because: " + e.getMessage(), e);
+			throw new RecalcitrantManagerGrumbling("I don't want to hire the dealer named \"" + dealer.getName() + "\" because: " + e.getMessage(), e);
 		}
 	}
 }
