@@ -1,21 +1,29 @@
 package austincodedojo.cyberpoker.test.acceptance;
 
+import java.net.*;
+
 import org.apache.commons.lang.NotImplementedException;
 import java.net.*;
 
+import javax.ws.rs.core.*;
+
+import com.sun.jersey.api.client.*;
+import com.sun.jersey.api.client.config.*;
+import com.sun.jersey.core.util.*;
+
 /**
- * Connects to the CasinoManagement port of the Casino server to control the 
+ * Connects to the CasinoManagement port of the Casino server to control the
  * server and allow synchronization with Player events.
  * 
  * @author gsymons@gsconsulting.biz
- *
+ * 
  */
 public class CasinoManager {
 
-	private final URL casinoUrl;
+	private final CasinoManagerConnection connection;
 
-	public CasinoManager(URL casinoUrl) throws MalformedURLException {
-		this.casinoUrl = new URL(casinoUrl, "manager");
+	public CasinoManager(URL casinoUrl) throws Exception {
+		connection = createConnection(casinoUrl);
 	}
 
 	public void waitForPlayer(Player player) {
@@ -24,7 +32,12 @@ public class CasinoManager {
 				"Still need to implement CasinoManager.waitForPlayer()");
 	}
 
-	public void hireDealer(String dealerName) throws URISyntaxException {
+	public void hireDealer(String dealerName) {
+		connection.createDealer(new Dealer(dealerName));
+	}
+
+	private CasinoManagerConnection createConnection(URL casinoUrl) throws URISyntaxException {
+		return new CasinoManagerConnection(casinoUrl);
 	}
 
 	public void fireAllDealers() {
