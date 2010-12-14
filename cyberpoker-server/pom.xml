@@ -18,6 +18,23 @@
   		<groupId>com.sun.jersey</groupId>
   		<artifactId>jersey-server</artifactId>
   	</dependency>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.sun.jersey.test.framework</groupId>
+  		<artifactId>jersey-test-framework</artifactId>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>austincodedojo</groupId>
+  		<artifactId>cyberpoker-core</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  		<type>jar</type>
+  		<scope>compile</scope>
+  	</dependency>
   </dependencies>
   <build>
     <finalName>cyberpoker-server</finalName>
