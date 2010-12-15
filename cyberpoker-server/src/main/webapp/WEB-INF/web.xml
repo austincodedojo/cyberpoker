@@ -4,4 +4,16 @@
 
 <web-app>
   <display-name>Austin Code Dojo CyberPoker Server</display-name>
+  <servlet>
+  	<servlet-name>Cyberpoker Server</servlet-name>
+  	<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+  	<init-param>
+  		<param-name>com.sun.jersey.config.property.packages</param-name>
+  		<param-value>austincodedojo.cyberpoker.server</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Cyberpoker Server</servlet-name>
+  	<url-pattern>/cyberpoker-casino/*</url-pattern>
+  </servlet-mapping>
 </web-app>

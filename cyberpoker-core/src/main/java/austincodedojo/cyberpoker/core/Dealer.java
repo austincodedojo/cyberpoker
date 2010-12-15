@@ -28,4 +28,23 @@ public class Dealer {
 	{
 		return name;
 	}
+	
+	@Override
+	public String toString()
+	{
+		return name;
+	}
+	
+	@Override
+	public boolean equals(Object other)
+	{
+		if (!(other instanceof Dealer)) return false;
+		return ((Dealer)other).getName().equals(name);
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return name.hashCode();
+	}
 }
