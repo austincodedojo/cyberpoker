@@ -1,11 +1,18 @@
 package austincodedojo.cyberpoker.test.acceptance;
 
 import java.net.URISyntaxException;
-import java.net.URL;
 
-import org.apache.commons.lang.NotImplementedException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import static org.hamcrest.Matchers.hasProperty;
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.*;
+import static org.junit.matchers.JUnitMatchers.hasItem;
 
 import austincodedojo.cyberpoker.core.Dealer;
+import austincodedojo.cyberpoker.core.Player;
 import austincodedojo.cyberpoker.server.manager.CasinoManagerConnection;
 
 /**
@@ -24,9 +31,16 @@ public class CasinoManager {
 	}
 
 	public void waitForPlayer(PlayerDriver driver) {
-		// TODO Auto-generated method stub
-		throw new NotImplementedException(
-				"Still need to implement CasinoManager.waitForPlayer()");
+		long timeout = System.currentTimeMillis() + 1000;
+		Player[] players = new Player[0];
+		while(System.currentTimeMillis() < timeout && !hasItem(hasProperty("name", equalTo(driver.getName()))).matches(players));
+		{
+			players = connection.listPlayers();
+		}
+		
+		ArrayList<Object> playerObjs= new ArrayList<Object>();
+		playerObjs.add(players);
+		assertThat(playerObjs, hasItem(hasProperty("name", equalTo(driver.getName()))));
 	}
 
 	public void hireDealer(String dealerName) {

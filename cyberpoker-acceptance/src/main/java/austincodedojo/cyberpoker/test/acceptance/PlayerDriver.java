@@ -4,6 +4,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import org.apache.commons.lang.*;
+import org.hamcrest.Matcher;
 
 import austincodedojo.cyberpoker.client.*;
 
@@ -50,4 +51,9 @@ private void enterTextIntoField(String text, String field) {
   public void setName(String playerName) {
     enterTextIntoField(playerName, PlayerWindow.PLAYER_NAME_FIELD);
   }
+
+public String getName() {
+	// TODO Auto-generated method stub
+	return null;
+}
 }
