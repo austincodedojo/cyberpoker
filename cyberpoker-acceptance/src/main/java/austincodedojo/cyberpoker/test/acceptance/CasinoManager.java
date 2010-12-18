@@ -28,12 +28,13 @@ public class CasinoManager {
 		connection = createConnection(casinoUrl);
 	}
 
-	public void waitForPlayer(PlayerDriver driver) {
+	public void waitForPlayer(PlayerDriver driver) throws InterruptedException {
 		long timeout = System.currentTimeMillis() + 1000;
 		Player[] players = new Player[0];
 		while(System.currentTimeMillis() < timeout && !hasItem(hasProperty("name", equalTo(driver.getName()))).matches(players));
 		{
 			players = connection.listPlayers();
+			Thread.sleep(100);
 		}
 		
 		ArrayList<Object> playerObjs= new ArrayList<Object>();
