@@ -7,7 +7,7 @@ import static org.junit.Assert.assertThat;
 
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.ArrayList;
+import java.util.*;
 
 import austincodedojo.cyberpoker.core.Dealer;
 import austincodedojo.cyberpoker.core.Player;
@@ -37,8 +37,7 @@ public class CasinoManager {
 			Thread.sleep(100);
 		}
 		
-		ArrayList<Object> playerObjs= new ArrayList<Object>();
-		playerObjs.add(players);
+		ArrayList<Object> playerObjs = new ArrayList<Object>(Arrays.asList(players));
 		assertThat(playerObjs, hasItem(hasProperty("name", equalTo(driver.getName()))));
 	}
 
