@@ -1,6 +1,6 @@
 package austincodedojo.cyberpoker.test.acceptance;
 
-import java.net.*;
+import java.net.URL;
 
 import org.junit.After;
 import org.junit.Before;

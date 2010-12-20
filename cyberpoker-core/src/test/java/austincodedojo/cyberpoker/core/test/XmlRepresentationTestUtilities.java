@@ -1,14 +1,19 @@
 package austincodedojo.cyberpoker.core.test;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.StringReader;
+import java.io.StringWriter;
 
-import javax.xml.bind.*;
-import javax.xml.parsers.*;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
-import org.w3c.dom.*;
-import org.xml.sax.*;
-
-import austincodedojo.cyberpoker.core.*;
+import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
 public class XmlRepresentationTestUtilities {
 	public static Document parseEntityXml(final String xml)

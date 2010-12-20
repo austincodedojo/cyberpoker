@@ -1,13 +1,16 @@
 package austincodedojo.cyberpoker.core.test.player;
 
-import static austincodedojo.cyberpoker.core.test.XmlRepresentationTestUtilities.*;
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
+import static austincodedojo.cyberpoker.core.test.XmlRepresentationTestUtilities.generateXmlRepresentationOf;
+import static austincodedojo.cyberpoker.core.test.XmlRepresentationTestUtilities.parseEntityXml;
+import static austincodedojo.cyberpoker.core.test.XmlRepresentationTestUtilities.rootElementTagName;
+import static org.hamcrest.Matchers.hasXPath;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
-import org.junit.*;
-import org.w3c.dom.*;
+import org.junit.Test;
+import org.w3c.dom.Document;
 
-import austincodedojo.cyberpoker.core.*;
+import austincodedojo.cyberpoker.core.Player;
 
 public class WhenGeneratingAnXmlRepresentation {
 	@Test

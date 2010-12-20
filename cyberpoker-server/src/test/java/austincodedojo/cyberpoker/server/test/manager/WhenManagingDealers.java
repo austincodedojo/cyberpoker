@@ -9,7 +9,7 @@ import java.util.Arrays;
 import org.junit.Test;
 
 import austincodedojo.cyberpoker.core.Dealer;
-import austincodedojo.cyberpoker.server.test.*;
+import austincodedojo.cyberpoker.server.test.ServerTest;
 
 
 public class WhenManagingDealers extends ServerTest {

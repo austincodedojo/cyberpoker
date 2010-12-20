@@ -4,8 +4,8 @@ import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 
-import austincodedojo.cyberpoker.core.*;
-import austincodedojo.cyberpoker.server.exception.Bug;
+import austincodedojo.cyberpoker.core.Dealer;
+import austincodedojo.cyberpoker.core.Player;
 
 @Path("/manager")
 public class CyberpokerServerManager {

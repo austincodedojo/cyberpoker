@@ -3,14 +3,15 @@ package austincodedojo.cyberpoker.test.acceptance;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
-import org.apache.commons.lang.*;
-import org.hamcrest.Matcher;
+import org.apache.commons.lang.NotImplementedException;
 
-import austincodedojo.cyberpoker.client.*;
+import austincodedojo.cyberpoker.client.PlayerWindow;
 
-import com.objogate.wl.swing.*;
-import com.objogate.wl.swing.driver.*;
-import com.objogate.wl.swing.gesture.*;
+import com.objogate.wl.swing.AWTEventQueueProber;
+import com.objogate.wl.swing.driver.JButtonDriver;
+import com.objogate.wl.swing.driver.JFrameDriver;
+import com.objogate.wl.swing.driver.JTextFieldDriver;
+import com.objogate.wl.swing.gesture.GesturePerformer;
 
 /**
  * Drives a Player GUI using WindowLicker for testing.

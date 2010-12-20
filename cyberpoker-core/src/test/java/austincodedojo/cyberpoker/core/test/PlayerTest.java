@@ -1,13 +1,10 @@
 package austincodedojo.cyberpoker.core.test;
 
-import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+import org.junit.runners.Suite.SuiteClasses;
 
-import org.junit.*;
-import org.junit.runner.*;
-import org.junit.runners.*;
-import org.junit.runners.Suite.*;
-
-import austincodedojo.cyberpoker.core.test.player.*;
+import austincodedojo.cyberpoker.core.test.player.WhenGeneratingAnXmlRepresentation;
 
 @RunWith(Suite.class)
 @SuiteClasses(WhenGeneratingAnXmlRepresentation.class)

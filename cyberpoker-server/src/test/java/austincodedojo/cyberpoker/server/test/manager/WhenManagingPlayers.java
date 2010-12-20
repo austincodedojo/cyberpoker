@@ -1,18 +1,14 @@
 package austincodedojo.cyberpoker.server.test.manager;
 
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
-import java.util.*;
+import org.junit.Test;
 
-import org.junit.*;
+import austincodedojo.cyberpoker.core.Player;
+import austincodedojo.cyberpoker.server.test.ServerTest;
 
-import com.sun.jersey.api.client.*;
-
-import austincodedojo.cyberpoker.core.*;
-import austincodedojo.cyberpoker.server.*;
-import austincodedojo.cyberpoker.server.test.*;
+import com.sun.jersey.api.client.WebResource;
 
 public class WhenManagingPlayers extends ServerTest {
 

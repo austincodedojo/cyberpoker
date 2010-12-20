@@ -1,13 +1,14 @@
 package austincodedojo.cyberpoker.test.acceptance;
 
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasProperty;
 import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.hasProperty;
 import static org.junit.Assert.assertThat;
 
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import austincodedojo.cyberpoker.core.Dealer;
 import austincodedojo.cyberpoker.core.Player;
