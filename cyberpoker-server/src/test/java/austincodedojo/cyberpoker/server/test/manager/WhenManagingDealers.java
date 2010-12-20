@@ -9,20 +9,21 @@ import java.util.Arrays;
 import org.junit.Test;
 
 import austincodedojo.cyberpoker.core.Dealer;
+import austincodedojo.cyberpoker.server.test.*;
 
-import com.sun.jersey.test.framework.JerseyTest;
 
-public class WhenManagingDealers extends JerseyTest {
+public class WhenManagingDealers extends ServerTest {
+
 	public WhenManagingDealers() throws Exception {
-		super("austincodedojo.cyberpoker.server");
+		super();
 	}
 
 	@Test
 	public void shouldBeAbleToHireADealer() throws Exception {
 		Dealer dealer = new Dealer("Joe");
 		
-		webResource.path("manager").path("dealers").put(dealer);
-		Dealer[] dealers = webResource.path("manager").path("dealers").get(Dealer[].class);
+		resource().path("manager").path("dealers").put(dealer);
+		Dealer[] dealers = resource().path("manager").path("dealers").get(Dealer[].class);
 		
 		assertThat(Arrays.asList(dealers), hasItem(equalTo(dealer)));
 	}

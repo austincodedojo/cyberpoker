@@ -24,8 +24,8 @@
   		<scope>test</scope>
   	</dependency>
   	<dependency>
-  		<groupId>com.sun.jersey.test.framework</groupId>
-  		<artifactId>jersey-test-framework</artifactId>
+  		<groupId>com.sun.jersey.jersey-test-framework</groupId>
+  		<artifactId>jersey-test-framework-inmemory</artifactId>
   		<scope>test</scope>
   	</dependency>
   	<dependency>
@@ -34,6 +34,10 @@
   		<version>0.0.1-SNAPSHOT</version>
   		<type>jar</type>
   		<scope>compile</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.hamcrest</groupId>
+  		<artifactId>hamcrest-all</artifactId>
   	</dependency>
   </dependencies>
   <build>
