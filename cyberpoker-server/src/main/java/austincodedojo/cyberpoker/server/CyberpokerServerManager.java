@@ -21,13 +21,7 @@ public class CyberpokerServerManager {
 	public Dealer[] listDealers()
 	{
 		Dealer[] dealerList = { new Dealer("Joe") };
-		try {
-			return dealerList;
-		}
-		catch (Exception e)
-		{
-			throw new Bug("Unable to encode dealerList! Reason: " + e.getMessage(), e);
-		}
+		return dealerList;
 	}
 	
 	@GET
@@ -35,12 +29,6 @@ public class CyberpokerServerManager {
 	public Player[] listPlayers()
 	{
 		Player[] playerList = new Player[0];
-		try {
-			return playerList;
-		}
-		catch (Exception e)
-		{
-			throw new Bug("Unable to encode playerList! Reason: " + e.getMessage(), e);
-		}
+		return playerList;
 	}
 }
