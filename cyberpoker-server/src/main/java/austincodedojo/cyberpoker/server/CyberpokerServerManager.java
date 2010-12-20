@@ -4,7 +4,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 
-import austincodedojo.cyberpoker.core.Dealer;
+import austincodedojo.cyberpoker.core.*;
 import austincodedojo.cyberpoker.server.exception.Bug;
 
 @Path("/manager")
@@ -27,6 +27,20 @@ public class CyberpokerServerManager {
 		catch (Exception e)
 		{
 			throw new Bug("Unable to encode dealerList! Reason: " + e.getMessage(), e);
+		}
+	}
+	
+	@GET
+	@Path("players")
+	public Player[] listPlayers()
+	{
+		Player[] playerList = new Player[0];
+		try {
+			return playerList;
+		}
+		catch (Exception e)
+		{
+			throw new Bug("Unable to encode playerList! Reason: " + e.getMessage(), e);
 		}
 	}
 }
