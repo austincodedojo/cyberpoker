@@ -27,17 +27,11 @@ public class WhenThePlayerHasConnectedToACasino {
   public void stopClient()
   {
 	  player.dispose();
-	  casino.fireAllDealers();
   }
 
   @Test
   public void thePlayerShouldDisplayAListOfDealers() throws Exception {
     casino.hireDealer(DEALER_NAME);
-    
-    player.setName("Player1");
-    player.enterCasino(CASINO_URL);
-    casino.waitForPlayer(player);
-    
-    player.shouldShowDealerNamed(DEALER_NAME);
+    player.shouldSeeADealerNamed(DEALER_NAME);
   }
 }

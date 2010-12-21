@@ -22,8 +22,6 @@ import com.objogate.wl.swing.gesture.GesturePerformer;
  */
 public class PlayerDriver extends JFrameDriver{
 
-	private String name = null;
-
 	@SuppressWarnings("unchecked")
 	public PlayerDriver() {
 		super(new GesturePerformer(), new AWTEventQueueProber(),
@@ -31,33 +29,8 @@ public class PlayerDriver extends JFrameDriver{
 				showingOnScreen());
 	}
 
-	public void enterCasino(String casinoUrl) {
-		enterTextIntoField(casinoUrl, PlayerWindow.CASINO_FIELD);
-
-		@SuppressWarnings("unchecked")
-		JButtonDriver enterButton = new JButtonDriver(this, JButton.class, named(PlayerWindow.ENTER_CASINO_BUTTON));
-		enterButton.click();
-	}
-
-	private void enterTextIntoField(String text, String field) {
-		@SuppressWarnings("unchecked")
-		JTextFieldDriver casinoField = new JTextFieldDriver(this, JTextField.class, named(field));
-		casinoField.focusWithMouse();
-		casinoField.typeText(text);
-		casinoField.hasText(text);
-	}
-
-	public void shouldShowDealerNamed(String dealerName) {
+	public void shouldSeeADealerNamed(String dealerName) {
 		// TODO Auto-generated method stub
 		throw new NotImplementedException("Still need to implement PlayerDriver.shouldShowDealerNamed()");
-	}
-
-	public void setName(String playerName) {
-		enterTextIntoField(playerName, PlayerWindow.PLAYER_NAME_FIELD);
-		name = playerName;
-	}
-
-	public String getName() {
-		return name;
 	}
 }
