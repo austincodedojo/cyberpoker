@@ -1,16 +1,24 @@
 package austincodedojo.cyberpoker.test.acceptance;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JList;
 import javax.swing.JTextField;
 
 import org.apache.commons.lang.NotImplementedException;
+import static org.junit.Assert.*;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.*;
+
 
 import austincodedojo.cyberpoker.client.PlayerWindow;
 
 import com.objogate.wl.swing.AWTEventQueueProber;
 import com.objogate.wl.swing.ComponentSelector;
 import com.objogate.wl.swing.driver.JButtonDriver;
+import com.objogate.wl.swing.driver.JComboBoxDriver;
 import com.objogate.wl.swing.driver.JFrameDriver;
+import com.objogate.wl.swing.driver.JListDriver;
 import com.objogate.wl.swing.driver.JTextFieldDriver;
 import com.objogate.wl.swing.gesture.GesturePerformer;
 
@@ -30,7 +38,7 @@ public class PlayerDriver extends JFrameDriver{
 	}
 
 	public void shouldSeeADealerNamed(String dealerName) {
-		// TODO Auto-generated method stub
-		throw new NotImplementedException("Still need to implement PlayerDriver.shouldShowDealerNamed()");
+		JListDriver dealers = new JListDriver(this, JList.class, named(PlayerWindow.DEALER_LIST));
+		dealers.hasItem(equalTo(dealerName));
 	}
 }
