@@ -11,7 +11,8 @@ import austincodedojo.cyberpoker.client.ClientMain;
 
 public class WhenThePlayerHasConnectedToACasino {
   private static final String CASINO_URL = "http://localhost:8080/cyberpoker-casino";
-  private static final String DEALER_NAME = "Joe";
+  private static final String DEALER_NAME1 = "Joe";
+  private static final String DEALER_NAME2 = "Bill";
   private PlayerDriver player;
   private CasinoManager casino;
   
@@ -31,7 +32,13 @@ public class WhenThePlayerHasConnectedToACasino {
 
   @Test
   public void thePlayerShouldDisplayAListOfDealers() throws Exception {
-    casino.hireDealer(DEALER_NAME);
-    player.shouldSeeADealerNamed(DEALER_NAME);
+    casino.hireDealer(DEALER_NAME1);
+    player.shouldSeeADealerNamed(DEALER_NAME1);
+  }
+  @Test
+  public void thePlayerShouldDisplayOnlyTheHiredDealer() throws Exception {
+    casino.hireDealer(DEALER_NAME2);
+    player.shouldSeeADealerNamed(DEALER_NAME2);
+    player.shouldNotSeeADealerNamed(DEALER_NAME1);
   }
 }

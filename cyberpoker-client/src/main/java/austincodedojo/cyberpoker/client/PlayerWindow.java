@@ -22,7 +22,7 @@ public class PlayerWindow extends JFrame {
     setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
     
-    JList dealerList = new JList(new String[] {"Joe"});
+    JList dealerList = new JList(new String[] {"Bill", "Joe"});
     dealerList.setName(DEALER_LIST);
     
     JScrollPane scrollPane = new JScrollPane(dealerList);

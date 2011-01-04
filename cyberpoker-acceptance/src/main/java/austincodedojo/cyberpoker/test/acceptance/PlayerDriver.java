@@ -1,11 +1,17 @@
 package austincodedojo.cyberpoker.test.acceptance;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JList;
 import javax.swing.JTextField;
+import javax.swing.ListModel;
 
 import org.apache.commons.lang.NotImplementedException;
+import org.hamcrest.Description;
+
 import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.*;
@@ -13,6 +19,7 @@ import static org.hamcrest.Matchers.*;
 
 import austincodedojo.cyberpoker.client.PlayerWindow;
 
+import com.objogate.wl.Query;
 import com.objogate.wl.swing.AWTEventQueueProber;
 import com.objogate.wl.swing.ComponentSelector;
 import com.objogate.wl.swing.driver.JButtonDriver;
@@ -30,6 +37,26 @@ import com.objogate.wl.swing.gesture.GesturePerformer;
  */
 public class PlayerDriver extends JFrameDriver{
 
+	private final class DealerListQuery implements
+			Query<JList, Collection<String>> {
+		@Override
+		public Collection<String> query(JList list) {
+			Collection<String> returnList = new ArrayList<String>();
+			ListModel model = list.getModel();
+			for (int i = 0; i < model.getSize(); ++i) {
+				returnList.add(model.getElementAt(i).toString());
+			}
+			
+			return returnList;
+		}
+
+		@Override
+		public void describeTo(Description description) {
+			description.appendText("dealer list");
+			
+		}
+	}
+
 	@SuppressWarnings("unchecked")
 	public PlayerDriver() {
 		super(new GesturePerformer(), new AWTEventQueueProber(),
@@ -40,5 +67,15 @@ public class PlayerDriver extends JFrameDriver{
 	public void shouldSeeADealerNamed(String dealerName) {
 		JListDriver dealers = new JListDriver(this, JList.class, named(PlayerWindow.DEALER_LIST));
 		dealers.hasItem(equalTo(dealerName));
+	}
+
+	public void shouldNotSeeADealerNamed(String dealerName) {
+		JListDriver dealers = new JListDriver(this, JList.class, 
+				named(PlayerWindow.DEALER_LIST));
+		dealers.has(aDealerList(), not(hasItem(dealerName)));
+	}
+
+	private Query<JList, Collection<String>> aDealerList() {
+		return new DealerListQuery();
 	}
 }
