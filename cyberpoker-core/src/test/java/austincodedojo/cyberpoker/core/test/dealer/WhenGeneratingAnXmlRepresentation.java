@@ -30,14 +30,4 @@ public class WhenGeneratingAnXmlRepresentation {
     Document parsedDealer = parseEntityXml(dealerXml);
     assertThat(parsedDealer, hasXPath("/dealer/name", is("Joe")));
   }
-  
-  @Test
-  public void shouldHaveAVersion() throws Exception {
-    Dealer dealer = new Dealer("Joe");
-    final String dealerXml = generateXmlRepresentationOf(dealer);
-    
-    Document parsedDealer = parseEntityXml(dealerXml);
-    
-    assertThat(parsedDealer, hasXPath("/dealer/@version"));
-  }
 }

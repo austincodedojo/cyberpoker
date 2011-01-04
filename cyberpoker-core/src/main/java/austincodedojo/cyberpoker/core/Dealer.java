@@ -6,9 +6,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Dealer {
-    @XmlAttribute
-    private int version = 1;
-    
     @XmlElement
 	private String name = "";
 
@@ -18,11 +15,6 @@ public class Dealer {
 	
 	public Dealer() {
     }
-
-	public int getVersion()
-	{
-	  return version;
-	}
 	
 	public String getName()
 	{
